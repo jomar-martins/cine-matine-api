@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cine_matine_api;
 
 namespace cine_matine_api.Migrations
 {
     [DbContext(typeof(CineContext))]
-    partial class CineContextModelSnapshot : ModelSnapshot
+    [Migration("20200828142923_FilmesCriador")]
+    partial class FilmesCriador
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

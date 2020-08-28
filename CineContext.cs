@@ -10,6 +10,7 @@ namespace cine_matine_api
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<FilmeModel>().Property(c => c.Nota).HasColumnType("numeric(5,2)");
+            builder.Entity<ComentarioModel>().Property(c => c.Nota).HasColumnType("numeric(5,2)");
         }
 
         public DbSet<UsersModel> Users { get; set; }

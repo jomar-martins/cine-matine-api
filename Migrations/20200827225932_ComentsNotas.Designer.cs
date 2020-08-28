@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cine_matine_api;
 
 namespace cine_matine_api.Migrations
 {
     [DbContext(typeof(CineContext))]
-    partial class CineContextModelSnapshot : ModelSnapshot
+    [Migration("20200827225932_ComentsNotas")]
+    partial class ComentsNotas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,9 +59,6 @@ namespace cine_matine_api.Migrations
                     b.Property<short>("Ano")
                         .HasColumnType("smallint");
 
-                    b.Property<int?>("CriadorId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
@@ -94,8 +93,6 @@ namespace cine_matine_api.Migrations
                         .HasColumnType("numeric(5,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CriadorId");
 
                     b.HasIndex("GeneroId");
 
@@ -180,10 +177,6 @@ namespace cine_matine_api.Migrations
 
             modelBuilder.Entity("cine_matine_api.Models.FilmeModel", b =>
                 {
-                    b.HasOne("cine_matine_api.Models.UsersModel", "Criador")
-                        .WithMany()
-                        .HasForeignKey("CriadorId");
-
                     b.HasOne("cine_matine_api.Models.GeneroModel", "Genero")
                         .WithMany()
                         .HasForeignKey("GeneroId");

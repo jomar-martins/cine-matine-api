@@ -19,5 +19,6 @@ namespace cine_matine_api.Models
         public string LinkYoutube { get; set; }
         public string ImageURI { get; set; } // https://css-tricks.com/data-uris/  //  System.Convert.ToBase64String()
         public IList<ComentarioModel> Comentarios { get; set; }
+        public UsersModel Criador { get; set; }
     }
 }
